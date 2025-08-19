@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>🎵 Simon Says - Memory Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/simon.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+</head>
+<body class="body">
+    <div class="stars" id="stars"></div>
+    
+    <button class="sound-toggle" onclick="toggleSound()" title="Toggle Sound">🔊</button>
+      <!-- Botón externo fijo en la esquina superior derecha -->
+    <div class="external-button">
+      <button class="back-to-index" onclick="volverAlIndex()">Volver</button>
+    </div>
+
+    <h1 id="level-title">Press SPACE or Click START to Begin</h1>
+    
+    <div class="game-info">
+        <div class="info-item">
+            Level
+            <span class="info-value" id="level-display">0</span>
+        </div>
+        <div class="info-item">
+            Score
+            <span class="info-value" id="score-display">0</span>
+        </div>
+        <div class="info-item">
+            Best
+            <span class="info-value" id="best-score">0</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="center-logo" id="center-logo">
+            SIMON
+        </div>
+        
+        <div class="row">
+            <div class="btn green" id="green" data-color="green"></div>
+            <div class="btn red" id="red" data-color="red"></div>
+        </div>
+        <div class="row">
+            <div class="btn yellow" id="yellow" data-color="yellow"></div>
+            <div class="btn blue" id="blue" data-color="blue"></div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="control-btn" id="start-btn" onclick="startGame()">START GAME</button>
+        <button class="control-btn" onclick="resetGame()">🔄 RESET</button>
+    </div>
+    
+    <div class="instructions">
+        Press SPACE to start • Watch the pattern • Repeat the sequence • Beat your best score!
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">Desarrollado por Ana Lucía Silva Córdoba</div>
+        <div class="footer-right">
+          <a
+            href="https://github.com/alusilcof5"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/ana-lucia-silva-cordoba"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+<script src="../scripts/button.js"></script>
+
+<script src="../scripts/simon.js"></script>
+</body>
+</html>

@@ -5,9 +5,14 @@
     <title>🎲 Aventura de Dados Mágicos 🎲</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/dice.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <script src="../scripts/dice.js" defer></script>
-    <link rel="icon" href="./images/dice-icon.png" type="image/png">
     <link rel="stylesheet" href="../css/button.css">
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -16,7 +21,7 @@
     <div class="container">
         <h1 id="gameTitle">¡Lanza los Dados Mágicos!</h1>
         
-        <!-- Botón externo fijo en la esquina superior derecha -->
+     <!-- Botón externo fijo en la esquina superior derecha -->
     <div class="external-button">
       <button class="back-to-index" onclick="volverAlIndex()">Volver</button>
     </div>
@@ -57,10 +62,32 @@
             </div>
             <button class="reset-btn" onclick="resetGame()">🔄 Nuevo Juego</button>
         </div>
+
     </div>
+    <script src="../scripts/button.js"></script>
     
-    <footer>
-        🌟 ¡Diviértete jugando con los dados mágicos! 🌟
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">Desarrollado por Ana Lucía Silva Córdoba</div>
+        <div class="footer-right">
+          <a
+            href="https://github.com/alusilcof5"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/ana-lucia-silva-cordoba"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+        </div>
+      </div>
     </footer>
 </body>
 </html>

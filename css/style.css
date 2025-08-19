@@ -90,6 +90,10 @@ body {
   );
 }
 
+.game-image.dice {
+    background: linear-gradient(135deg, #7642ba, #b9aeca);
+}
+
 .game-image.chess {
   background: linear-gradient(135deg, #8b4513, #1ed22d);
 }
@@ -112,8 +116,12 @@ body {
   background: linear-gradient(135deg, #a4a8b4, #0000cd);
 }
 .game-image.snake {
-  background: linear-gradient(135deg, #adff2f, #32cda6);
+  background: linear-gradient(135deg, #f1fae3, #32cda6);
 }
+
+.game-image.simon {
+  background: linear-gradient(135deg, #00ff88, #d400a6);
+} 
 
 .difficulty {
   position: absolute;
@@ -186,50 +194,6 @@ body {
   box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
 }
 
-/* Footer Styles */
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  padding: 15px 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 1000;
-}
-
-.footer {
-  background-color: #1a1a1a;
-  color: #f1f1f1;
-  padding: 1rem 0;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto; /* centra el contenido */
-  padding: 0 1.5rem; /* espacio lateral interno */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer-left {
-  font-weight: 500;
-}
-
-.footer-right a {
-  color: #f1f1f1;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-right a:hover {
-  color: #0e76a8; /* color al hacer hover */
-}
 
 @media (max-width: 768px) {
   .header h1 {

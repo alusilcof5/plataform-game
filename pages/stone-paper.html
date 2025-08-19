@@ -3,66 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Piedra, Papel o Tijeras</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        text-align: center;
-        padding: 50px;
-    }
-    h1 {
-        font-size: 3rem;
-    }
-    .score {
-        font-size: 2rem;
-        margin: 20px 0;
-    }
-    .buttons {
-        margin: 20px;
-    }
-    button {
-        font-size: 1.5rem;
-        padding: 15px 30px;
-        margin: 10px;
-        cursor: pointer;
-        border-radius: 8px;
-        border: none;
-        background-color: #4CAF50;
-        color: white;
-        transition: background-color 0.3s;
-    }
-    button:hover {
-        background-color: #45a049;
-    }
-    .result {
-        font-size: 2rem;
-        margin-top: 20px;
-        font-weight: bold;
-    }
-    .instructions {
-        margin-top: 30px;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        display: inline-block;
-        max-width: 500px;
-        font-size: 1.2rem;
-        color: #333;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        text-align: left;
-    }
-    .instructions h2 {
-        margin-top: 0;
-        font-size: 1.5rem;
-        color: #4CAF50;
-    }
-    .instructions ul {
-        padding-left: 20px;
-    }
+<link rel="stylesheet" href="../css/stone.css">
+<link rel="stylesheet" href="../css/footer.css">
+ <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+<script src="../scripts/stone.js" defer></script>
+<script src="../scripts/button.js" defer></script>
 </style>
 </head>
 <body>
 <h1>Piedra, Papel o Tijeras</h1>
+
+<div class="external-button">
+    <button class="back-to-index" onclick="volverAlIndex()">Volver</button>
+</div>
+
 <div class="score">
     Jugador: <span id="player-score">0</span> - Computadora: <span id="computer-score">0</span>
 </div>
@@ -89,37 +47,29 @@
     </ul>
 </div>
 
-<script>
-    let playerScore = 0;
-    let computerScore = 0;
+ <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">Desarrollado por Ana Lucía Silva Córdoba</div>
+        <div class="footer-right">
+          <a
+            href="https://github.com/alusilcof5"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/ana-lucia-silva-cordoba"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
 
-    function computerPlay() {
-        const choices = ['piedra', 'papel', 'tijeras'];
-        return choices[Math.floor(Math.random() * 3)];
-    }
-
-    function play(playerSelection) {
-        const computerSelection = computerPlay();
-        let result = '';
-
-        if (playerSelection === computerSelection) {
-            result = 'Empate 😐';
-        } else if (
-            (playerSelection === 'piedra' && computerSelection === 'tijeras') ||
-            (playerSelection === 'papel' && computerSelection === 'piedra') ||
-            (playerSelection === 'tijeras' && computerSelection === 'papel')
-        ) {
-            playerScore++;
-            result = `Ganaste 🎉 (${playerSelection} vence a ${computerSelection})`;
-        } else {
-            computerScore++;
-            result = `Perdiste 😢 (${computerSelection} vence a ${playerSelection})`;
-        }
-
-        document.getElementById('player-score').textContent = playerScore;
-        document.getElementById('computer-score').textContent = computerScore;
-        document.getElementById('result').textContent = result;
-    }
-</script>
 </body>
 </html>
