@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 20px 80px 20px; /* Padding inferior para el footer fijo */
+  padding: 20px 20px 80px 20px; 
   margin: 0;
 }
 
@@ -77,22 +77,22 @@ h1 {
 
 .brick-row-1 {
   background: #f56565;
-} /* Rojo suave */
+} 
 .brick-row-2 {
   background: #ed8936;
-} /* Naranja suave */
+} 
 .brick-row-3 {
   background: #ecc94b;
-} /* Amarillo suave */
+} 
 .brick-row-4 {
   background: #48bb78;
-} /* Verde suave */
+} 
 .brick-row-5 {
   background: #4299e1;
-} /* Azul suave */
+} 
 .brick-row-6 {
   background: #9f7aea;
-} /* Púrpura suave */
+}
 
 .controls {
   text-align: center;
@@ -254,7 +254,6 @@ button:active {
   margin: 2px 0 0 0;
 }
 
-/* Botón fuera del contenedor principal */
 .external-button {
   position: fixed;
   top: 100px;
@@ -283,8 +282,8 @@ button:active {
 
 .footer-container {
   max-width: 1200px;
-  margin: 0 auto; /* centra el contenido */
-  padding: 0 1.5rem; /* espacio lateral interno */
+  margin: 0 auto; 
+  padding: 0 1.5rem; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -303,7 +302,7 @@ button:active {
 }
 
 .footer-right a:hover {
-  color: #0e76a8; /* color al hacer hover */
+  color: #0e76a8; 
 }
 
 @media (max-width: 768px) {

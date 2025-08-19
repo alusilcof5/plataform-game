@@ -91,9 +91,7 @@
     }
 
    
-/* <- Pega esto al final de tu archivo CSS, después de la regla `button { ... }` */
 
-/* Control de visibilidad: añadimos una clase .show para mostrar el modal con flex (centra) */
 .modal {
     display: none;
     position: fixed;
@@ -105,12 +103,11 @@
     justify-content: center;
 }
 
-/* Cuando quieras mostrar el modal, añade la clase 'show' desde JS */
 .modal.show {
     display: flex;
 }
 
-/* Contenido del modal (fondo blanco, sombra, etc.) */
+
 #winModal .modal-content {
     background: white;
     color: black;
@@ -121,7 +118,7 @@
     box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
-/* Estilo específico para el botón del modal de victoria */
+
 #winModal .modal-content button {
     font-size: 1rem;
     padding: 10px 15px;
@@ -131,10 +128,9 @@
     color: #ffffff;
     cursor: pointer;
     transition: transform 0.15s ease, opacity 0.15s ease;
-    -webkit-appearance: none; /* evitar estilos por defecto en Safari */
+    -webkit-appearance: none; 
 }
 
-/* Hover agradable */
 #winModal .modal-content button:hover {
     transform: translateY(-2px) scale(1.02);
     opacity: 0.95;

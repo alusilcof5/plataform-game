@@ -8,7 +8,7 @@ body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(135deg, #aeb4b9 0%, #e2e8f0 100%);
   min-height: 100vh;
-  padding-bottom: 60px; /* Espacio para el footer fijo */
+  padding-bottom: 60px; 
 }
 
 .container {
@@ -121,6 +121,10 @@ body {
 
 .game-image.simon {
   background: linear-gradient(135deg, #00ff88, #d400a6);
+} 
+
+.game-image.tetris {
+   background: linear-gradient(135deg, #ff6969, #ffc014);
 } 
 
 .difficulty {

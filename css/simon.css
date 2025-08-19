@@ -17,7 +17,6 @@
   align-items: center;
 }
 
-/* Animated background stars */
 .stars {
   position: fixed;
   top: 0;
@@ -55,7 +54,6 @@
   }
 }
 
-/* Main title */
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: clamp(1.5rem, 4vw, 3rem);
@@ -87,7 +85,6 @@
   }
 }
 
-/* Game info panel */
 .game-info {
   display: flex;
   justify-content: center;
@@ -117,7 +114,7 @@
   color: #ffffff;
 }
 
-/* Game container */
+
 .container {
   display: block;
   width: min(90vw, 500px);
@@ -125,7 +122,7 @@
   position: relative;
 }
 
-/* Center logo/indicator */
+
 .center-logo {
   position: absolute;
   top: 50%;
@@ -157,14 +154,14 @@
     inset 0 0 20px rgba(0, 255, 136, 0.2);
 }
 
-/* Button rows */
+
 .row {
   display: flex;
   justify-content: center;
   margin: 0;
 }
 
-/* Game buttons */
+
 .btn {
   margin: 5px;
   display: inline-block;
@@ -202,7 +199,7 @@
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Color-specific styles */
+
 .red {
   background: linear-gradient(135deg, #ff4757, #ff3838);
   border-color: #ff6b7a;
@@ -223,7 +220,7 @@
   border-color: #ffd700;
 }
 
-/* Button states */
+
 .btn.pressed {
   transform: scale(0.95);
   box-shadow:
@@ -254,7 +251,6 @@
   }
 }
 
-/* Game over state */
 .game-over {
   background: linear-gradient(135deg, #ff4757, #c44569) !important;
   animation: game-over-flash 0.5s ease-in-out;
@@ -272,7 +268,7 @@
   }
 }
 
-/* Controls */
+
 .controls {
   margin: 30px 0;
   display: flex;
@@ -313,7 +309,7 @@
   box-shadow: none;
 }
 
-/* Sound toggle */
+
 .sound-toggle {
   position: fixed;
   top: 20px;
@@ -339,7 +335,6 @@
   background: rgba(175, 224, 179, 0.1);
   }
 
-/* Instructions */
 .instructions {
   position: fixed;
   bottom: 20px;
@@ -355,7 +350,7 @@
   margin-bottom: 50px;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
   .btn {
     height: 140px;
@@ -392,7 +387,7 @@
   }
 }
 
-/* Score animation */
+
 .score-animation {
   position: absolute;
   font-size: 2rem;

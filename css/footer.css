@@ -1,4 +1,3 @@
-/* Footer Styles */
 .footer {
   position: fixed;
   bottom: 0;
@@ -20,8 +19,8 @@
 
 .footer-container {
   max-width: 1200px;
-  margin: 0 auto; /* centra el contenido */
-  padding: 0 1.5rem; /* espacio lateral interno */
+  margin: 0 auto; 
+  padding: 0 1.5rem; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,5 +39,5 @@
 }
 
 .footer-right a:hover {
-  color: #0e76a8; /* color al hacer hover */
+  color: #0e76a8; 
 }

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>🎮 Tetris - Block Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tetris.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <button class="sound-toggle" onclick="toggleSound()" title="Toggle Sound">🔊</button>
+    
+    <section>
+    <div class="external-button">
+      <button class="back-to-index" onclick="volverAlIndex()">Volver</button>
+    </div>
+   
+
+    <div class="game-container">
+        <div class="left-panel">
+            <div class="game-title">TETRIS</div>
+            
+            <div class="info-panel">
+                <div class="info-title">Score</div>
+                <div class="info-value" id="score">0</div>
+            </div>
+            
+            <div class="info-panel">
+                <div class="info-title">Lines</div>
+                <div class="info-value" id="lines">0</div>
+            </div>
+            
+            <div class="info-panel">
+                <div class="info-title">Level</div>
+                <div class="info-value" id="currentLevel">1</div>
+                <div class="level-selector">
+                    <button class="level-btn active" onclick="setLevel(1)">Easy</button>
+                    <button class="level-btn" onclick="setLevel(2)">Normal</button>
+                    <button class="level-btn" onclick="setLevel(3)">Hard</button>
+                </div>
+            </div>
+            
+            <div class="info-panel">
+                <div class="info-title">Next Piece</div>
+                <div class="next-piece">
+                    <div class="next-grid" id="nextPiece"></div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="control-btn" id="startBtn" onclick="startGame()">🚀 Start Game</button>
+                <button class="control-btn pause-btn" id="pauseBtn" onclick="togglePause()">⏸️ Pause</button>
+                <button class="control-btn" onclick="resetGame()">🔄 Reset</button>
+            </div>
+        </div>
+        
+        <div class="game-board">
+            <div class="tetris-grid" id="gameGrid"></div>
+        </div>
+    </div>
+    
+    <div class="game-over-overlay" id="gameOverOverlay">
+        <div class="game-over-content">
+            <div class="game-over-title">GAME OVER</div>
+            <div class="game-over-stats" id="finalStats"></div>
+            <button class="control-btn" onclick="startGame()">🎮 Play Again</button>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        ⬅️➡️ Move • ⬇️ Soft Drop • ⬆️ Rotate • SPACE Hard Drop • P Pause
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">Desarrollado por Ana Lucía Silva Córdoba</div>
+        <div class="footer-right">
+          <a
+            href="https://github.com/alusilcof5"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/ana-lucia-silva-cordoba"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="../scripts/tetris.js"></script>
+    <script src="../scripts/button.js"></script>
+</body>
+</html>
