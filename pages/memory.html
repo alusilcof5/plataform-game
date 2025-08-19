@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Juego de Memoria con Emojis</title>
+<link rel="stylesheet" href="../css/memory.css">
+<link rel="stylesheet" href="../css/button.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../scripts/memory.js" defer></script>
+
+</head>
+<body>
+    <!-- Botón externo fijo en la esquina superior derecha -->
+    <div class="external-button">
+      <button class="back-to-index" onclick="volverAlIndex()">Volver</button>
+    </div>
+
+<h1>Juego de Memoria con Emojis</h1>
+<div id="timer">⏱ 0:00</div>
+
+<div class="buttons">
+    <button onclick="resetGame()">Reiniciar</button>
+    <button onclick="newGame()">Nuevo Juego</button>
+</div>
+
+<div class="board" id="board"></div>
+
+<!-- Modal de victoria -->
+<div class="modal" id="winModal">
+    <div class="modal-content">
+        <h2>🎉 ¡Ganaste!</h2>
+        <p id="finalTime"></p>
+        <button onclick="closeModal()">Cerrar</button>
+    </div>
+</div>
+<script src="../scripts/button.js"></script>
+
+
+
+</body>
+</html>
+

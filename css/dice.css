@@ -1,0 +1,365 @@
+ 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Fredoka', cursive;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background particles */
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            margin: 20px 0 30px;
+            font-family: 'Comic Neue', cursive;
+            font-weight: 700;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+            font-size: clamp(2rem, 6vw, 4rem);
+            color: #FFE066;
+            animation: glow 2s ease-in-out infinite alternate;
+            text-stroke: 2px #FF6B6B;
+            -webkit-text-stroke: 2px #FF6B6B;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 3px 3px 0 rgba(0,0,0,0.3), 0 0 20px #FFE066; }
+            to { text-shadow: 3px 3px 0 rgba(0,0,0,0.3), 0 0 30px #FFE066, 0 0 40px #FFE066; }
+        }
+
+        .game-board {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .player {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            min-width: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .player.winner {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #FFD700;
+            border-color: #FFD700;
+            animation: celebrate 1s ease-in-out;
+        }
+
+        @keyframes celebrate {
+            0%, 100% { transform: scale(1.05) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(2deg); }
+            75% { transform: scale(1.1) rotate(-2deg); }
+        }
+
+        .player-name {
+            font-size: 1.8rem;
+            color: #FF6B6B;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }
+
+        .player1 .player-name { color: #FF6B6B; }
+        .player2 .player-name { color: #4ECDC4; }
+
+        .dice-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .dice {
+            width: 120px;
+            height: 120px;
+            background: #FFFFFF;
+            border-radius: 15px;
+            border: 3px solid #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dice::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .dice.rolling {
+            animation: roll 1s ease-in-out;
+        }
+
+        .dice.rolling::before {
+            opacity: 1;
+            animation: shine 1s ease-in-out;
+        }
+
+        @keyframes roll {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(90deg) scale(1.1); }
+            50% { transform: rotate(180deg) scale(0.9); }
+            75% { transform: rotate(270deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .dice:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .score {
+            font-size: 2rem;
+            color: #FFE066;
+            font-weight: 600;
+            margin-top: 15px;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+        }
+
+        .controls {
+            margin: 40px 0;
+        }
+
+        .roll-btn {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Fredoka', cursive;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roll-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .roll-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .roll-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        .roll-btn:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .roll-btn:disabled {
+            background: #999;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .scoreboard {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .scoreboard h3 {
+            color: #FFE066;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .scores {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .player-score {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .player-score span {
+            display: block;
+            font-size: 1.2rem;
+            color: #FFFFFF;
+        }
+
+        .player-score .total {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFE066;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+        }
+
+        .reset-btn {
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Fredoka', cursive;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+        }
+
+        footer {
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.2rem;
+            padding: 20px;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #FFD700;
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        .confetti:nth-child(odd) {
+            background: #FF6B6B;
+        }
+        .confetti:nth-child(even) {
+            background: #4ECDC4;
+        }
+        .confetti:nth-child(3n) {
+            background: #FF8E53;
+        }
+        .confetti:nth-child(4n) {
+            background: #FFB6C1;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .sound-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .sound-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .game-board {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .player {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    

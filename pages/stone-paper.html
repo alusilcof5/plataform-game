@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Piedra, Papel o Tijeras</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 50px;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    .score {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+    .buttons {
+        margin: 20px;
+    }
+    button {
+        font-size: 1.5rem;
+        padding: 15px 30px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 8px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    .result {
+        font-size: 2rem;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    .instructions {
+        margin-top: 30px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+        max-width: 500px;
+        font-size: 1.2rem;
+        color: #333;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: left;
+    }
+    .instructions h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+        color: #4CAF50;
+    }
+    .instructions ul {
+        padding-left: 20px;
+    }
+</style>
+</head>
+<body>
+<h1>Piedra, Papel o Tijeras</h1>
+<div class="score">
+    Jugador: <span id="player-score">0</span> - Computadora: <span id="computer-score">0</span>
+</div>
+<div class="buttons">
+    <button onclick="play('piedra')">✊ Piedra</button>
+    <button onclick="play('papel')">✋ Papel</button>
+    <button onclick="play('tijeras')">✌ Tijeras</button>
+</div>
+<div class="result" id="result"></div>
+
+<div class="instructions">
+    <h2>Cómo jugar</h2>
+    <ul>
+        <li>Selecciona <b>Piedra</b>, <b>Papel</b> o <b>Tijeras</b> haciendo clic en el botón correspondiente.</li>
+        <li>La computadora elegirá automáticamente su jugada.</li>
+        <li>Las reglas son simples:
+            <ul>
+                <li>Piedra rompe Tijeras</li>
+                <li>Tijeras cortan Papel</li>
+                <li>Papel envuelve Piedra</li>
+            </ul>
+        </li>
+        <li>El marcador se actualiza después de cada ronda.</li>
+    </ul>
+</div>
+
+<script>
+    let playerScore = 0;
+    let computerScore = 0;
+
+    function computerPlay() {
+        const choices = ['piedra', 'papel', 'tijeras'];
+        return choices[Math.floor(Math.random() * 3)];
+    }
+
+    function play(playerSelection) {
+        const computerSelection = computerPlay();
+        let result = '';
+
+        if (playerSelection === computerSelection) {
+            result = 'Empate 😐';
+        } else if (
+            (playerSelection === 'piedra' && computerSelection === 'tijeras') ||
+            (playerSelection === 'papel' && computerSelection === 'piedra') ||
+            (playerSelection === 'tijeras' && computerSelection === 'papel')
+        ) {
+            playerScore++;
+            result = `Ganaste 🎉 (${playerSelection} vence a ${computerSelection})`;
+        } else {
+            computerScore++;
+            result = `Perdiste 😢 (${computerSelection} vence a ${playerSelection})`;
+        }
+
+        document.getElementById('player-score').textContent = playerScore;
+        document.getElementById('computer-score').textContent = computerScore;
+        document.getElementById('result').textContent = result;
+    }
+</script>
+</body>
+</html>

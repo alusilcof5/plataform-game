@@ -1,0 +1,26 @@
+.back-to-index {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(128, 90, 213, 0.2);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-to-index:hover {
+  background: #6b46c1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(128, 90, 213, 0.3);
+}
+
+.back-to-index:focus {
+  outline: 2px solid #c4b5fd;
+  outline-offset: 2px;
+}

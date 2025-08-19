@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/sudoku.css">
+    <title>Sudoku - Juego Interactivo</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header"><h1>🧩 Sudoku</h1></div>
+        
+        <div class="game-info">
+            <div class="difficulty-selector">
+                <label for="difficulty">Dificultad: </label>
+                <select id="difficulty">
+                    <option value="easy">Fácil</option>
+                    <option value="hard">Difícil</option>
+                </select>
+            </div>
+            <div class="timer">⏱️ Tiempo: <span id="timer">00:00</span></div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" onclick="generateNewGame()">🔄 Nuevo</button>
+            <button class="btn btn-secondary" onclick="solvePuzzle()">✨ Resolver</button>
+            <button class="btn btn-secondary" onclick="clearSelected()">🗑️ Borrar</button>
+            <button class="btn btn-secondary" onclick="showInstructions()">❓ Info</button>
+        </div>
+
+        <div class="number-input" id="number-input"></div>
+        <div class="sudoku-board" id="sudoku-board"></div>
+        <div class="message success" id="success-message">🎉 ¡Felicidades! Sudoku completado 🎉</div>
+
+        <!-- Modal -->
+        <div class="modal" id="instructions-modal" onclick="hideInstructions()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h2>📋 Cómo Jugar</h2>
+                    <button class="close-btn" onclick="hideInstructions()">×</button>
+                </div>
+                <div class="modal-body" id="modal-body"></div>
+                <div class="modal-footer">
+                    <button class="btn" onclick="hideInstructions()">🚀 ¡A Jugar!</button>
+                </div>
+            </div>
+        </div>
+        <div class="back-button-container">
+    <a href="../index.html" class="btn btn-back">🏠 Volver al Índice</a>
+</div>
+
+    </div>
+    <script src="../scripts/sudoku.js"></script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #1a202c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px 80px 20px; /* Padding inferior para el footer fijo */
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: none;
+  text-align: center;
+  color: #2d3748;
+}
+
+.game-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e2e8f0;
+}
+
+.ball-container {
+  width: 800px;
+  height: 600px;
+  background: #f7fafc;
+  border: 3px solid #4299e1;
+  border-radius: 12px;
+  position: relative;
+  margin: 20px auto;
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ball {
+  width: 25px;
+  height: 25px;
+  background: #e53e3e;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 2px 8px rgba(229, 62, 62, 0.3);
+  border: 2px solid #c53030;
+}
+
+.bar {
+  width: 100px;
+  height: 15px;
+  background: #3182ce;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 10px;
+  left: 350px;
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.3);
+  border: 2px solid #2c5282;
+}
+
+.brick {
+  width: 75px;
+  height: 25px;
+  position: absolute;
+  border-radius: 4px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brick-row-1 {
+  background: #f56565;
+} /* Rojo suave */
+.brick-row-2 {
+  background: #ed8936;
+} /* Naranja suave */
+.brick-row-3 {
+  background: #ecc94b;
+} /* Amarillo suave */
+.brick-row-4 {
+  background: #48bb78;
+} /* Verde suave */
+.brick-row-5 {
+  background: #4299e1;
+} /* Azul suave */
+.brick-row-6 {
+  background: #9f7aea;
+} /* Púrpura suave */
+
+.controls {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.control-group {
+  display: inline-block;
+  margin: 0 15px;
+  vertical-align: top;
+}
+
+button {
+  background: #3182ce;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: #2c5282;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:focus {
+  outline: 3px solid #63b3ed;
+  outline-offset: 2px;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.speed-control {
+  background: #d69e2e;
+}
+
+.speed-control:hover {
+  background: #b7791f;
+}
+
+.restart-btn {
+  background: #e53e3e;
+}
+
+.restart-btn:hover {
+  background: #c53030;
+}
+
+.info-panel {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  background: #f7fafc;
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-label {
+  font-size: 14px;
+  color: #4a5568;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.info-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2d3748;
+}
+
+.game-status {
+  text-align: center;
+  font-size: 18px;
+  margin: 15px 0;
+  min-height: 25px;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.instructions {
+  background: #f7fafc;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  text-align: center;
+  max-width: 600px;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h3 {
+  margin-bottom: 10px;
+  color: #2d3748;
+  font-size: 20px;
+}
+
+.instructions p {
+  margin: 8px 0;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 15px 0;
+  background: #ffffff;
+  border-top: 2px solid #e2e8f0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.footer-text {
+  color: #4a5568;
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.game-info {
+  font-size: 12px;
+  color: #718096;
+  margin: 2px 0 0 0;
+}
+
+/* Botón fuera del contenedor principal */
+.external-button {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  z-index: 1001;
+}
+
+.external-button .back-to-index {
+  background: #e53e3e;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+}
+
+.external-button .back-to-index:hover {
+  background: #c53030;
+  box-shadow: 0 6px 16px rgba(229, 62, 62, 0.4);
+}
+
+.footer {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+  padding: 1rem 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto; /* centra el contenido */
+  padding: 0 1.5rem; /* espacio lateral interno */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  font-weight: 500;
+}
+
+.footer-right a {
+  color: #f1f1f1;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: #0e76a8; /* color al hacer hover */
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+  }
+
+  .footer-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .external-button {
+    top: 10px;
+    right: 10px;
+  }
+
+  .external-button .back-to-index {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ball-container {
+    width: 90vw;
+    max-width: 800px;
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .game-container {
+    padding: 20px;
+    margin: 0 10px;
+  }
+}
+
+.brick.destroyed {
+  animation: brickDestroy 0.3s ease-out;
+}
+
+@keyframes brickDestroy {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+}
