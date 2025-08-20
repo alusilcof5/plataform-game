@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>🎯 Ahorcado - Desafío de Palabras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/hangman.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <button class="sound-toggle" onclick="toggleSound()" title="Activar/Desactivar Sonidos">🔊</button>
+    
+    
+    <div class="game-container">
+        <div class="left-panel">
+            <div class="game-title">AHORCADO</div>
+            
+            <div class="external-button">
+      <button class="back-to-index" onclick="volverAlIndex()">Volver</button>
+    </div>
+
+            <div class="glass-card">
+                <div class="info-title">Puntuación</div>
+                <div class="info-value" id="score">0</div>
+            </div>
+            
+            <div class="glass-card">
+                <div class="info-title">Palabras Correctas</div>
+                <div class="info-value" id="wordsCorrect">0</div>
+            </div>
+            
+            <div class="glass-card">
+                <div class="info-title">Categoría</div>
+                <div class="selector-grid" id="categorySelector">
+                    <button class="selector-btn active" data-category="animales">Animales</button>
+                    <button class="selector-btn" data-category="comida">Comida</button>
+                    <button class="selector-btn" data-category="paises">Países</button>
+                    <button class="selector-btn" data-category="deportes">Deportes</button>
+                </div>
+            </div>
+            
+            <div class="glass-card">
+                <div class="info-title">Dificultad</div>
+                <div class="selector-grid" id="difficultySelector">
+                    <button class="selector-btn active" data-difficulty="facil">Fácil</button>
+                    <button class="selector-btn" data-difficulty="medio">Medio</button>
+                    <button class="selector-btn" data-difficulty="dificil">Difícil</button>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="control-btn" id="newGameBtn" onclick="startNewGame()">🎮 Nueva Palabra</button>
+                <button class="control-btn secondary" onclick="resetGame()">🔄 Reiniciar</button>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <div class="glass-card word-display">
+                <div class="word-letters" id="wordDisplay"></div>
+                <div class="category-hint" id="categoryHint">Categoría: Animales</div>
+            </div>
+            
+            <div class="glass-card keyboard">
+                <div class="keyboard-title">Selecciona una letra</div>
+                <div class="alphabet-grid" id="alphabetGrid"></div>
+            </div>
+
+             <div class="hangman-container">
+                <svg class="hangman-svg" viewBox="0 0 200 200">
+                    <!-- Base -->
+                    <line class="hangman-part" id="base" x1="10" y1="190" x2="100" y2="190"></line>
+                    <!-- Pole -->
+                    <line class="hangman-part" id="pole" x1="30" y1="190" x2="30" y2="20"></line>
+                    <!-- Top -->
+                    <line class="hangman-part" id="top" x1="30" y1="20" x2="120" y2="20"></line>
+                    <!-- Noose -->
+                    <line class="hangman-part" id="noose" x1="120" y1="20" x2="120" y2="40"></line>
+                    <!-- Head -->
+                    <circle class="hangman-part" id="head" cx="120" cy="50" r="10"></circle>
+                    <!-- Body -->
+                    <line class="hangman-part" id="body" x1="120" y1="60" x2="120" y2="130"></line>
+                    <!-- Left arm -->
+                    <line class="hangman-part" id="leftArm" x1="120" y1="80" x2="100" y2="100"></line>
+                    <!-- Right arm -->
+                    <line class="hangman-part" id="rightArm" x1="120" y1="80" x2="140" y2="100"></line>
+                    <!-- Left leg -->
+                    <line class="hangman-part" id="leftLeg" x1="120" y1="130" x2="100" y2="150"></line>
+                    <!-- Right leg -->
+                    <line class="hangman-part" id="rightLeg" x1="120" y1="130" x2="140" y2="150"></line>
+                </svg>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="game-result-overlay" id="gameResultOverlay">
+        <div class="game-result-content">
+            <div class="result-title" id="resultTitle">¡GANASTE!</div>
+            <div class="result-word" id="resultWord">La palabra era: EJEMPLO</div>
+            <div class="result-stats" id="resultStats">Puntuación: +100</div>
+            <div class="controls">
+                <button class="control-btn" onclick="continueGame()">🎯 Continuar</button>
+                <button class="control-btn secondary" onclick="resetGame()">🔄 Reiniciar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        Selecciona categoría y dificultad • Haz clic en las letras • Adivina antes de completar el dibujo
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">Desarrollado por Ana Lucía Silva Córdoba</div>
+        <div class="footer-right">
+          <a
+            href="https://github.com/alusilcof5"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/ana-lucia-silva-cordoba"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+<script src="../scripts/button.js"></script>
+<script src="../scripts/hangman.js"></script>
+   
+</body>
+</html>

@@ -126,6 +126,9 @@ body {
 .game-image.tetris {
    background: linear-gradient(135deg, #ff6969, #ffc014);
 } 
+.game-image.hangman {
+  background: linear-gradient(135deg, #dfff6b, #24ee89);
+}
 
 .difficulty {
   position: absolute;
