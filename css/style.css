@@ -130,6 +130,12 @@ body {
   background: linear-gradient(135deg, #dfff6b, #24ee89);
 }
 
+.game-image.tetris {
+  background: linear-gradient(135deg, #6b8eff, #24ee89);
+}
+
+
+
 .difficulty {
   position: absolute;
   top: 10px;

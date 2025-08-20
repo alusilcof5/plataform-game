@@ -1,6 +1,6 @@
 // Elementos del DOM
 const btnIniciar = document.querySelector("#iniciar-juego");
-// const btnReiniciar = document.querySelector("#reiniciar-juego"); // Eliminado
+// const btnReiniciar = document.querySelector("#reiniciar-juego"); 
 const btnPausar = document.querySelector("#pausar-juego");
 const btnAumentarVelocidad = document.querySelector("#aumentar-velocidad");
 const btnDisminuirVelocidad = document.querySelector("#disminuir-velocidad");
@@ -12,7 +12,7 @@ const vidasElement = document.querySelector("#vidas");
 const gameArea = document.querySelector("#game-area");
 
         // Variables del juego
-        const movimientoDeBarraEnPixeles = 40; // Aumentado de 25 a 40 para movimiento más rápido
+        const movimientoDeBarraEnPixeles = 40; 
         let coordLeftBarra = 350;
         let topDelta = 4;
         let leftDelta = 4;
@@ -69,7 +69,7 @@ const gameArea = document.querySelector("#game-area");
                         width: anchoBloque,
                         height: altoBloque,
                         destroyed: false,
-                        points: (6 - fila) * 10 // Más puntos por bloques superiores
+                        points: (6 - fila) * 10 
                     });
                 }
             }
@@ -135,7 +135,7 @@ const gameArea = document.querySelector("#game-area");
             const fieldHeight = gameArea.clientHeight;
             const fieldWidth = gameArea.clientWidth;
             const paddleHeight = 15;
-            const paddleY = fieldHeight - paddleHeight - 10; // 10px del borde inferior
+            const paddleY = fieldHeight - paddleHeight - 10; 
 
             // Calcular nueva posición
             let newTopCoord = topCoord;
@@ -317,7 +317,7 @@ const gameArea = document.querySelector("#game-area");
             perdiste.textContent = "Presiona Iniciar para comenzar";
         }
 
-        // Funciones de actualización de UI
+       
         function sumarMarcador(puntos) {
             marcador.textContent = puntos;
         }
@@ -368,18 +368,18 @@ const gameArea = document.querySelector("#game-area");
             spanVelocidadBola.textContent = velocidadBolaMostrada;
         }
 
-        // Event listeners
+        
         document.body.addEventListener("keydown", moverBarra);
 btnIniciar.addEventListener("click", empezarJuego);
 btnPausar.addEventListener("click", pausarJuego);
-// btnReiniciar.addEventListener("click", reiniciarJuego); // Eliminado
+
 btnAumentarVelocidad.addEventListener("click", aumentarVelocidadBola);
 btnDisminuirVelocidad.addEventListener("click", disminuirVelocidadBola);
-        // Inicializar juego
+        
         reiniciarJuego();
 
 
-        // Redimensionar juego en cambio de ventana
+        
         window.addEventListener('resize', () => {
             if (!juegoActivo) {
                 setTimeout(() => {

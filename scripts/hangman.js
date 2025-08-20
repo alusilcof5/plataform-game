@@ -15,26 +15,103 @@
        
         const wordCategories = {
             animales: {
-                facil: ['GATO', 'PERRO', 'PATO', 'OSO', 'LEON', 'MONO', 'PEZ'],
-                medio: ['ELEFANTE', 'JIRAFA', 'CABALLO', 'CONEJO', 'TIGRE', 'ZEBRA'],
-                dificil: ['RINOCERONTE', 'HIPOPOTAMO', 'COCODRILO', 'MURCIELAGO', 'ARMADILLO']
+                facil: [
+                'GATO', 'PERRO', 'PATO', 'OSO', 'LEON', 'MONO', 'PEZ', 'LOBO', 'RANA',
+                'RATON', 'ZORRO', 'LORO', 'BURRO', 'OVEJA', 'CABRA', 'CERDO', 'VACA',
+                'POLLO', 'CABALLO', 'GALLINA', 'CONEJO', 'TORTUGA', 'GANSO', 'FOCA',
+                'GAVIOTA', 'AGUILA', 'ARDILLA', 'DELFIN', 'MARIPOSA', 'ABEJA'
+                ],
+                medio: [
+                'ELEFANTE', 'JIRAFA', 'CABALLO', 'CONEJO', 'TIGRE', 'ZEBRA', 'DELFIN',
+                'CAMELLO', 'CANGURO', 'VENADO', 'GORILA', 'AVESTRUZ', 'IGUANA', 'PAVO',
+                'BUITRE', 'HORMIGA', 'MARTINPESCADOR', 'LEOPARDO', 'MAPACHE', 'NUTRIA',
+                'KOALA', 'PINGÜINO', 'PELICANO', 'HALCON', 'CASTOR', 'BISONTE',
+                'SERPIENTE', 'ERIZO', 'JABALI', 'FLAMENCO'
+                ],
+                dificil: [
+                'RINOCERONTE', 'HIPOPOTAMO', 'COCODRILO', 'MURCIELAGO', 'ARMADILLO',
+                'ORNITORRINCO', 'CAMALEON', 'TARANTULA', 'ESCORPION', 'PANGOLIN',
+                'NARVAL', 'OKAPI', 'QUOKKA', 'CARPINCHO', 'AXOLOTE', 'DRAGONKOMODO',
+                'GAVIAL', 'CIGUEÑA', 'ALPACA', 'ÑANDU', 'IGUANAMARINA', 'TUCAN',
+                'AGUIPERDICERA', 'CANGREJOYETI', 'PEZESPADA', 'MEDUSA', 'MANTARAYA',
+                'CABALLITO DE MAR', 'CAMARONPISTOLA', 'PULPOGIGANTE'
+                ]
             },
             comida: {
-                facil: ['PIZZA', 'PASTA', 'PAN', 'POLLO', 'ARROZ', 'SOPA'],
-                medio: ['HAMBURGUESA', 'SANDWICH', 'ENSALADA', 'PESCADO', 'VERDURAS'],
-                dificil: ['ESPAGUETIS', 'LASAGNA', 'QUESADILLA', 'BROCHETA', 'GUACAMOLE']
+                facil: [
+                'PIZZA', 'PASTA', 'PAN', 'POLLO', 'ARROZ', 'SOPA', 'QUESO', 'FRUTA',
+                'LECHE', 'HUEVO', 'JAMON', 'CARNE', 'YOGURT', 'ENSALADA', 'GALLETAS',
+                'TOMATE', 'MAIZ', 'PAPA', 'MANGO', 'BANANA', 'SANDIA', 'PERA',
+                'MANZANA', 'NARANJA', 'UVAS', 'KIWI', 'PIÑA', 'COCO', 'AGUA'
+                ],
+                medio: [
+                'HAMBURGUESA', 'SANDWICH', 'ENSALADA', 'PESCADO', 'VERDURAS', 'TACOS',
+                'AREPA', 'CEVICHE', 'EMPANADA', 'CHOCOLATE', 'BROCOLI', 'ZANAHORIA',
+                'ESPINACA', 'CALABAZA', 'POLENTA', 'SUSHI', 'CHURROS', 'AREQUIPE',
+                'CUPCAKE', 'LENTEJAS', 'FRIJOLES', 'ENSALADILLA', 'RAMEN', 'QUICHE',
+                'MERMELADA', 'SALCHICHA', 'ALBONDIGAS', 'CROQUETAS', 'TORTILLA',
+                'ENSALADACAPRESE'
+                ],
+                dificil: [
+                'ESPAGUETIS', 'LASAGNA', 'QUESADILLA', 'BROCHETA', 'GUACAMOLE',
+                'RATATOUILLE', 'BRUSCHETTA', 'CASSOULET', 'GAZPACHO', 'PAELLA',
+                'CALZONE', 'FONDUE', 'BORSCHT', 'MUSAKA', 'TIRAMISU', 'PANETTONE',
+                'FALAFEL', 'HUMMUS', 'TAPENADE', 'CAVIAR', 'MOUSSE', 'MACARONS',
+                'STRÜDEL', 'SASHIMI', 'TEMPURA', 'DIMSUM', 'KIMCHI', 'BULGOGI',
+                'CURRY', 'CHOWMEIN'
+                ]
             },
             paises: {
-                facil: ['PERU', 'CHILE', 'CUBA', 'CHINA', 'BRASIL', 'ITALIA'],
-                medio: ['ARGENTINA', 'COLOMBIA', 'ECUADOR', 'VENEZUELA', 'URUGUAY'],
-                dificil: ['MADAGASCAR', 'KAZAJISTAN', 'AZERBAIYAN', 'UZBEKISTAN', 'KIRGUISTAN']
+                facil: [
+                'PERU', 'CHILE', 'CUBA', 'CHINA', 'BRASIL', 'ITALIA', 'MEXICO', 'JAPON',
+                'CANADA', 'USA', 'RUSIA', 'FRANCIA', 'ALEMANIA', 'INDIA', 'ESPAÑA',
+                'PORTUGAL', 'ECUADOR', 'COLOMBIA', 'ARGENTINA', 'URUGUAY', 'VENEZUELA',
+                'BOLIVIA', 'PARAGUAY', 'PANAMA', 'COSTARICA', 'HONDURAS', 'GUATEMALA',
+                'NICARAGUA', 'EL SALVADOR'
+                ],
+                medio: [
+                'ARGENTINA', 'COLOMBIA', 'ECUADOR', 'VENEZUELA', 'URUGUAY', 'AUSTRALIA',
+                'NUEVAZELANDA', 'SUDAFRICA', 'EGIPTO', 'MARRUECOS', 'TURQUIA', 'TAILANDIA',
+                'FILIPINAS', 'VIETNAM', 'INDONESIA', 'GRECIA', 'SUIZA', 'SUECIA', 'NORUEGA',
+                'DINAMARCA', 'FINLANDIA', 'POLONIA', 'HUNGRIA', 'CHEQUIA', 'IRLANDA',
+                'ESCOCIA', 'BELGICA', 'HOLANDA', 'AUSTRIA', 'RUMANIA'
+                ],
+                dificil: [
+                'MADAGASCAR', 'KAZAJISTAN', 'AZERBAIYAN', 'UZBEKISTAN', 'KIRGUISTAN',
+                'TURKMENISTAN', 'TAJIKISTAN', 'MONGOLIA', 'BIELORRUSIA', 'GEORGIA',
+                'LITUANIA', 'LETONIA', 'ESTONIA', 'UCRANIA', 'ESLOVENIA', 'ESLOVAQUIA',
+                'CROACIA', 'SERBIA', 'BOSNIA', 'MONTENEGRO', 'MACEDONIA', 'ARMENIA',
+                'IRAN', 'IRAQ', 'PAKISTAN', 'AFGANISTAN', 'NEPAL', 'BUTAN', 'MYANMAR',
+                'LAOS'
+                ]
             },
             deportes: {
-                facil: ['FUTBOL', 'TENIS', 'GOLF', 'BOXEO', 'NADO', 'SURF'],
-                medio: ['BALONCESTO', 'VOLEIBOL', 'ATLETISMO', 'CICLISMO', 'GIMNASIA'],
-                dificil: ['HALTEROFILIA', 'PENTATHLON', 'BADMINTON', 'WATERPOLO', 'ESGRIMA']
+                facil: [
+                'FUTBOL', 'TENIS', 'GOLF', 'BOXEO', 'NADO', 'SURF', 'RUGBY', 'BASQUET',
+                'PADEL', 'HOCKEY', 'ESQUI', 'SKATE', 'JUDO', 'KARATE', 'LUCHA',
+                'PINGPONG', 'CICLISMO', 'ATLETISMO', 'VOLEIBOL', 'BALONMANO',
+                'ESCALADA', 'ESGRIMA', 'SOFTBOL', 'BILLAR', 'DARDOS'
+                ],
+                medio: [
+                'BALONCESTO', 'VOLEIBOL', 'ATLETISMO', 'CICLISMO', 'GIMNASIA',
+                'HANDBALL', 'BMX', 'SNOWBOARD', 'WINDSURF', 'TAEKWONDO', 'PILOTA',
+                'TRIATLON', 'HEPTATLON', 'DECATLON', 'KITESURF', 'ESCALADA',
+                'PATINAJE', 'REMOS', 'NATACION', 'ARQUERIA', 'BEISBOL', 'SQUASH',
+                'VELA', 'POLO', 'CURLING', 'ESQUIACUATICO', 'ESCALADADEPORTIVA',
+                'ULTRAMARATON', 'CANOTAJE', 'MOTOCROSS'
+                ],
+                dificil: [
+                'HALTEROFILIA', 'PENTATHLON', 'BADMINTON', 'WATERPOLO', 'ESGRIMA',
+                'LUGE', 'BANDY', 'KABADDI', 'SEPAPAKTAKRAW', 'SKELETON', 'BIATLON',
+                'TRINEO', 'CROSSFIT', 'TAFISA', 'BOBSLEIGH', 'PESAPALLO', 'UNDERWATERHOCKEY',
+                'ORIENTACION', 'TEQBALL', 'PICKLEBALL', 'FUTSAL', 'ULTIMATEFRISBEE',
+                'SOFTBALLFASTPITCH', 'CURLINGMIXTO', 'NORDICCOMBINED', 'KORFBALL',
+                'FLOORBALL', 'GYMNASTICAESTETICA', 'AEROBICA', 'SLACKLINE'
+                ]
             }
-        };
+            };
+
+
 
         // Hangman parts order
         const hangmanParts = ['base', 'pole', 'top', 'noose', 'head', 'body', 'leftArm', 'rightArm', 'leftLeg', 'rightLeg'];

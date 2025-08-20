@@ -10,70 +10,75 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
 </head>
 <body>
-    <div class="stars" id="stars"></div>
+  <section>
+      <div class="stars" id="stars"></div>
     
     <button class="sound-toggle" onclick="toggleSound()" title="Toggle Sound">🔊</button>
     
-    <section>
-    <div class="external-button">
-      <button class="back-to-index" onclick="volverAlIndex()">Volver</button>
-    </div>
-   
-
     <div class="game-container">
-        <div class="left-panel">
-            <div class="game-title">TETRIS</div>
-            
-            <div class="info-panel">
-                <div class="info-title">Score</div>
-                <div class="info-value" id="score">0</div>
+        <div class="info-panel">
+            <div class="info-card">
+                <h3>Puntuación</h3>
+                <div class="stat-value" id="score">0</div>
             </div>
             
-            <div class="info-panel">
-                <div class="info-title">Lines</div>
-                <div class="info-value" id="lines">0</div>
+            <div class="info-card">
+                <h3>Líneas</h3>
+                <div class="stat-value" id="lines">0</div>
             </div>
             
-            <div class="info-panel">
-                <div class="info-title">Level</div>
-                <div class="info-value" id="currentLevel">1</div>
-                <div class="level-selector">
-                    <button class="level-btn active" onclick="setLevel(1)">Easy</button>
-                    <button class="level-btn" onclick="setLevel(2)">Normal</button>
-                    <button class="level-btn" onclick="setLevel(3)">Hard</button>
+            <div class="info-card">
+                <h3>Nivel</h3>
+                <div class="stat-value" id="currentLevel">1</div>
+            </div>
+            
+            <div class="info-card">
+                <h3>Siguiente</h3>
+                <div class="next-piece-container">
+                    <div id="nextPieceGrid"></div>
                 </div>
             </div>
             
-            <div class="info-panel">
-                <div class="info-title">Next Piece</div>
-                <div class="next-piece">
-                    <div class="next-grid" id="nextPiece"></div>
-                </div>
+            <div class="info-card level-selector">
+                <h3>Seleccionar Nivel</h3>
+                <div class="level-buttons" id="levelButtons"></div>
             </div>
             
-            <div class="controls">
-                <button class="control-btn" id="startBtn" onclick="startGame()">🚀 Start Game</button>
-                <button class="control-btn pause-btn" id="pauseBtn" onclick="togglePause()">⏸️ Pause</button>
-                <button class="control-btn" onclick="resetGame()">🔄 Reset</button>
+            <div class="info-card controls">
+                <button class="control-btn" id="startBtn">🎮 Iniciar</button>
+                <button class="control-btn" id="pauseBtn">⏸️ Pausa</button>
+                <button class="control-btn danger" id="resetBtn">🔄 Reiniciar</button>
             </div>
         </div>
         
         <div class="game-board">
-            <div class="tetris-grid" id="gameGrid"></div>
+            <div class="grid-container">
+                <div id="gameGrid"></div>
+                <div class="pause-indicator" id="pauseIndicator">PAUSA</div>
+            </div>
+            
         </div>
+         <section>
+    <div class="external-button">
+      <button class="back-to-index" onclick="volverAlIndex()">Volver</button>
+    </div>
+        
     </div>
     
     <div class="game-over-overlay" id="gameOverOverlay">
         <div class="game-over-content">
-            <div class="game-over-title">GAME OVER</div>
-            <div class="game-over-stats" id="finalStats"></div>
-            <button class="control-btn" onclick="startGame()">🎮 Play Again</button>
+            <h2 class="game-over-title">¡GAME OVER!</h2>
+            <div class="final-stats" id="finalStats">
+                Puntuación: 0 | Líneas: 0 | Nivel: 1
+            </div>
+            <button class="control-btn" onclick="startGame()">🔄 Jugar de Nuevo</button>
         </div>
     </div>
     
     <div class="instructions">
-        ⬅️➡️ Move • ⬇️ Soft Drop • ⬆️ Rotate • SPACE Hard Drop • P Pause
+        ⬅️➡️ Mover | ⬇️ Bajar | ⬆️ Rotar | ESPACIO Caer | P Pausa
     </div>
+
 
     <footer class="footer">
       <div class="footer-container">
