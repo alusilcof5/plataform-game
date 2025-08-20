@@ -40,9 +40,10 @@ Actualmente, la plataforma cuenta con:
 
 ---
 
-## Capturas de pantalla
+## DEMO
 
-*(Puedes añadir aquí screenshots de tu proyecto para que se vea más atractivo)*
+![Breve demo](images/readme.gif)
+
 
 ---
 
